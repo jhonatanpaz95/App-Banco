@@ -29,9 +29,9 @@ while True:
             print("Operação Invalida, não é permitido depositos abaixo de R$ 5,00 ")
 
         saldo += valor_deposito
-        extrato.append(str(f'Deposito R$ {valor_deposito}'))
+        extrato.append(str(f'Deposito R$ {valor_deposito:.2f}'))
 
-        print(f'o saldo é: R$ {saldo} \n')
+        print(f'o saldo é: R$ {saldo:.2f} \n')
         print('Deseja fazer outra operação?')
         
       
@@ -45,27 +45,31 @@ while True:
             print('Operação invalida, não é permitido saque acima de R$ 500,00')
         elif saldo < valor_saque:
             print('saldo insuficiente')
-            print(f'O valor disponivel é R$ {saldo}')
+            print(f'O valor disponivel é R$ {saldo:.2f}')
 
         elif numero_saques < LIMITES_SAQUES:
             saldo -= valor_saque
             numero_saques += 1
-            #print(numero_saques)
-            extrato.append(str(f'Saque R$ {valor_saque}'))
+            extrato.append(str(f'Saque R$ {valor_saque:.2f}'))
             print(saldo)
         else:
-            print('O numero de saque excede o valor de saques permitidos') #mudar pra uma condição elif pra colocar outro comando no else
+            print('O numero de saque excede o valor de saques permitidos') 
 
-        print('Deseja fazer outra operação?')            
+        print('Deseja fazer outra operação?')
        
 
     elif opcao == '3':
         print('exibir extrato')
 
+        print('===============EXTRATO==============')
+
         for item in extrato:
             print(item)
-            
-        print(f'Saldo disponível {saldo}')
+    
+        print(f'\nSaldo disponível R$ {saldo:.2f}')
+        print('====================================')
+
+        print('deseja fazer outra operação:')
 
 
     elif opcao == '4':
