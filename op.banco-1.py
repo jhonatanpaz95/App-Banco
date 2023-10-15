@@ -21,7 +21,7 @@ while True:
 
     if opcao == '1':
 
-        print('qual é o valor que deseja depositar')
+        print('digite o valor que deseja depositar')
         valor_deposito = float((input('R$: ')))
         valor_minimo_deposito = 5
 
@@ -31,7 +31,7 @@ while True:
         saldo += valor_deposito
         extrato.append(str(f'Deposito R$ {valor_deposito:.2f}'))
 
-        print(f'o saldo é: R$ {saldo:.2f} \n')
+        print(f'Saldo R$ {saldo:.2f} \n')
         print('Deseja fazer outra operação?')
         
       
@@ -51,9 +51,9 @@ while True:
             saldo -= valor_saque
             numero_saques += 1
             extrato.append(str(f'Saque R$ {valor_saque:.2f}'))
-            print(saldo)
+            print(f'saldo disponível R$ {saldo:.2f} \n')
         else:
-            print('O numero de saque excede o valor de saques permitidos') 
+            print('O numero de saques excede o valor de saques permitidos \n') 
 
         print('Deseja fazer outra operação?')
        
